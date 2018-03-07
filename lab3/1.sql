@@ -3,12 +3,12 @@ DROP TABLE tabel;
 CREATE TABLE tabel(A integer, B integer);
 DECLARE
    v_constanta constant integer := 5;
-   v_contor1 integer;
-   v_valoare_curenta v_contor1%type;
-   v_cat v_contor1%type;
-   v_rest v_contor1%type;
-   v_suma_cifre v_contor1%type;
-   v_index v_contor1%type;
+   v_contor1 tabel.A%type;
+   v_valoare_curenta tabel.A%type;
+   v_cat tabel.A%type;
+   v_rest tabel.A%type;
+   v_suma_cifre tabel.A%type;
+   v_index tabel.A%type;
    v_is_prime boolean;
 BEGIN
     for v_contor1 in 1..10000 loop
@@ -38,20 +38,20 @@ BEGIN
                         DBMS_OUTPUT.PUT_LINE(v_contor1||'   '|| 0);
                       else 
                         v_index := 3;
-						v_is_prime := true;
+                        v_is_prime := true;
                         while (((v_index * v_index) <= v_contor1) and v_is_prime) loop
                           if (mod(v_contor1, v_index) = 0) 
                             then INSERT INTO tabel values (v_contor1, 0);
                                   DBMS_OUTPUT.PUT_LINE(v_contor1||'   '|| 0);
-								  v_is_prime := false;
+                                   v_is_prime := false;
                           end if;
                           v_index := v_index + 2;
                         end loop;
-						if (v_is_prime)
-							then
-								INSERT INTO tabel values (v_contor1, 1); 
-								DBMS_OUTPUT.PUT_LINE(v_contor1||'   '|| 1);
-						end if;
+                        if (v_is_prime)
+                          then
+                            INSERT INTO tabel values (v_contor1, 1); 
+                            DBMS_OUTPUT.PUT_LINE(v_contor1||'   '|| 1);
+                        end if;
                     end if; 
               end if;
             -- valori <= 9 
