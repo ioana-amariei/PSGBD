@@ -35,24 +35,25 @@ BEGIN
     DBMS_OUTPUT.PUT_LINE('Informatiile din tabel dupa update');
     loop
         fetch update_informatii into v_info_a, v_info_b;
-        v_fib_condition1 := 5 * v_info_a * v_info_a + 4;
-        v_fib_condition2 := 5 * v_info_a * v_info_a - 4;
-        v_radacina_patrata1 := sqrt(v_fib_condition1);
-        v_radacina_patrata2 := sqrt(v_fib_condition2);
+        exit when update_informatii%NOTFOUND;
         
-        if((v_radacina_patrata1 * v_radacina_patrata1 = v_fib_condition1) or (v_radacina_patrata2 * v_radacina_patrata2 = v_fib_condition2))
-          then 
-              if (v_info_b = 0) 
-                then UPDATE tabel SET B = 1;
-                v_numar_valori_update := v_numar_valori_update + 1;
-              end if;
-          else 
-              if(v_info_b = 1)
-                then UPDATE tabel SET B = 0;
-                v_numar_valori_update := v_numar_valori_update + 1;
-              end if;
-       end if;
-      exit when update_informatii%NOTFOUND;
+        v_fib_condition1 := (5 * v_info_a * v_info_a) + 4;
+        v_fib_condition2 := (5 * v_info_a * v_info_a) - 4;
+        v_radacina_patrata1 := floor(sqrt(v_fib_condition1));
+        v_radacina_patrata2 := floor(sqrt(v_fib_condition2));
+        
+        if(((v_radacina_patrata1 * v_radacina_patrata1) = v_fib_condition1) or ((v_radacina_patrata2 * v_radacina_patrata2) = v_fib_condition2)) then 
+            if (v_info_b = 0) then
+              v_info_b := 1;
+              UPDATE tabel SET B = 1;
+              v_numar_valori_update := v_numar_valori_update + 1;
+            end if;
+        elsif(v_info_b = 1) then 
+          v_info_b := 0;
+          UPDATE tabel SET B = 0;
+          v_numar_valori_update := v_numar_valori_update + 1;
+        end if;
+
       DBMS_OUTPUT.PUT_LINE(v_info_a||'   '|| v_info_b);
     end loop;
     close update_informatii;

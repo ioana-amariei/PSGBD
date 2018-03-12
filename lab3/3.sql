@@ -46,9 +46,9 @@ BEGIN
     open lista_note_student(v_id_student);
     loop 
       fetch lista_note_student into v_nota_student;
+      exit when lista_note_student%NOTFOUND;
       v_suma_note := v_suma_note + v_nota_student;
       v_numar_note := v_numar_note + 1;
-      exit when lista_note_student%NOTFOUND;
     end loop;
     close lista_note_student;
     

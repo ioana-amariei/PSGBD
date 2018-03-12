@@ -24,3 +24,10 @@ describe note;
 select id_student, avg(valoare)
 from note
 group by id_student;
+
+
+select id_student, sum(valoare) as "Suma note", count(valoare) as "Numar note"
+from note, studenti
+where id_student = studenti.id
+and id_student = 543
+group by id_student;
