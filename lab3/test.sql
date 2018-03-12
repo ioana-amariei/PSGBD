@@ -31,3 +31,11 @@ from note, studenti
 where id_student = studenti.id
 and id_student = 543
 group by id_student;
+
+
+describe databases;
+SELECT NAME FROM v$database;
+ SELECT DISTINCT OWNER FROM ALL_OBJECTS;
+select  sqrt(23) from dual;
+
+select sqrt(2) from dual;

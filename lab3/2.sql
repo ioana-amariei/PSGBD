@@ -41,7 +41,7 @@ BEGIN
         v_fib_condition2 := (5 * v_info_a * v_info_a) - 4;
         v_radacina_patrata1 := floor(sqrt(v_fib_condition1));
         v_radacina_patrata2 := floor(sqrt(v_fib_condition2));
-        
+      
         if(((v_radacina_patrata1 * v_radacina_patrata1) = v_fib_condition1) or ((v_radacina_patrata2 * v_radacina_patrata2) = v_fib_condition2)) then 
             if (v_info_b = 0) then
               v_info_b := 1;
@@ -53,7 +53,6 @@ BEGIN
           UPDATE tabel SET B = 0;
           v_numar_valori_update := v_numar_valori_update + 1;
         end if;
-
       DBMS_OUTPUT.PUT_LINE(v_info_a||'   '|| v_info_b);
     end loop;
     close update_informatii;
