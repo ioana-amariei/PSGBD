@@ -8,7 +8,7 @@ CREATE TABLE tabel_primul_student(id_student integer, nume varchar2(15 byte), pr
 DECLARE
 
   cursor lista_id_studenti is select id from studenti order by id asc;
-  cursor lista_note_student (p_id_student studenti.id%type) is select n.valoare from note n where n.id_student = p_id_student;
+  cursor lista_note_student (p_id_student studenti.id%type) is select valoare from note where id_student = p_id_student;
                             
   cursor selectie_cel_mai_bun_student is select * 
                                          from (select s1.id, s1.nume, s1.prenume, i1.medie_student as "MEDIE"
@@ -33,7 +33,9 @@ DECLARE
   v_suma_note v_numar_note%type;
   
 BEGIN
-
+  DBMS_OUTPUT.PUT_LINE('-----------------------------------------------');
+  DBMS_OUTPUT.PUT_LINE('Mediile tuturor studentilor:');
+  
   open lista_id_studenti;
   loop
     v_suma_note := 0;
@@ -54,6 +56,9 @@ BEGIN
     -- adaug in tabel doar daca are cel putin 3 note
     if (v_numar_note >= 3)
       then insert into info_studenti values (v_id_student, v_medie);
+    end if;
+    if(v_id_student = 543)
+      then DBMS_OUTPUT.PUT_LINE('Suma note: ' || v_suma_note || ' Numar note: ' || v_numar_note);
     end if;
     exit when lista_id_studenti%NOTFOUND;
     DBMS_OUTPUT.PUT_LINE(v_id_student || ' ' || round(v_medie, 3));
