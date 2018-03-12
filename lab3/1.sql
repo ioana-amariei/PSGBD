@@ -1,8 +1,16 @@
+/*
+Construiti un bloc anonim care sa populeze un tabel care are aiba doua campuri A, B astfel: 
+Valoarea campului A va contine toate numerele din intervalul 1..10000 care au proprietatea 
+ca valoarea sumei cifrelor modulo 9 este egala cu valoarea unei constante declarate la inceputul scriptului 
+(evident avand valoarea mai mica decat 9). 
+Valoarea lui B va fi 0 sau 1 in functie de primalitatea numarului (1=prim, 0=neprim). 
+*/
+
 set serveroutput on;
 DROP TABLE tabel;
 CREATE TABLE tabel(A integer, B integer);
 DECLARE
-   v_constanta constant integer := 7;
+   v_constanta constant integer := 5;
    v_contor tabel.A%type;
    v_valoare_curenta tabel.A%type;
    v_cat tabel.A%type;

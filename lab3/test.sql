@@ -6,7 +6,7 @@ from ( select * from (select  s.id, s.nume, s.prenume, s.an, avg(n.valoare) as "
       where rownum = 1) T1 join note n on
 n.id_student = T1.id join cursuri c on c.id = n.id_curs;
 
-/*
+
 set pagewidth 1000;
 select s1.id, s1.nume, s1.prenume, s1.an, trunc(avg(n1.valoare),3) as "MEDIE", count(valoare) as "NUMAR NOTE"
 from studenti s1, note n1
@@ -14,7 +14,6 @@ where s1.id = n1.id_student
 group by s1.id, s1.nume, s1.prenume, s1.an
 having count(valoare) >= 3
 order by 5 desc, 4 desc, 2 asc;
-*/
 
 select id
 from studenti
