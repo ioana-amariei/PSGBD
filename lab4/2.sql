@@ -4,8 +4,15 @@
   - de exemplu daca este in anul 3 va avea note la materiile din anii 1 si 2).
 */
 
+DROP TABLE titluri;
 DROP TABLE lista_studenti;
-CREATE TABLE lista_studenti(id integer not null, nr_mat integer, nume VARCHAR2(5 BYTE), prenume VARCHAR2(10 BYTE), an integer, bursa NUMBER(6,2), data_nast DATE, nota integer, titlu_curs VARCHAR2(50 BYTE));
+CREATE TABLE lista_studenti(id integer not null, nr_mat integer, nume VARCHAR2(5 BYTE), prenume VARCHAR2(10 BYTE), 
+                            an NUMBER(1,0) not null, bursa NUMBER(6,2), data_nast DATE, 
+                            nota integer, titlu_curs VARCHAR2(50 BYTE) not null, 
+                            constraint id_titlu_pk primary key (id, titlu_curs));
+CREATE TABLE titluri (id_student NUMBER(1,0) not null, titlu_curs VARCHAR2(50 BYTE) not null,
+                      constraint id_student_titlu_fk foreign key (id_student, titlu_curs) references lista_studenti (id, titlu_curs));
+
 CREATE OR REPLACE PROCEDURE insert_student(p_numar_studenti integer) AS
   v_id integer := 0;
   v_nr_mat integer;
@@ -41,8 +48,11 @@ BEGIN
                     exit when titlu_cursuri%NOTFOUND;
                     v_nota := DBMS_RANDOM.VALUE(4,10);
                     /* populeaza tabelul de studenti */
+                    
                     insert into lista_studenti (id, nr_mat, nume, prenume, an, bursa, data_nast, nota, titlu_curs)
                     values (v_id, v_nr_mat, v_nume, v_prenume, v_an, v_bursa, v_data_nast, v_nota, v_titlu_curs);
+                    insert into titluri  (id_student, titlu_curs) values(v_id, v_titlu_curs);
+                    
                 end loop;
             close titlu_cursuri;
         end loop;
