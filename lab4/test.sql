@@ -24,8 +24,8 @@ END;
 
 /* Test exercitiul 2 si 3 lab 4 */
 BEGIN
-    insert_student(4);
---    delete_student(2);
+--    insert_student(4);
+    delete_student(2);
 END;
 
 

@@ -11,7 +11,8 @@ CREATE TABLE lista_studenti(id integer not null, nr_mat integer, nume VARCHAR2(5
                             nota integer, titlu_curs VARCHAR2(50 BYTE) not null, 
                             constraint id_titlu_pk primary key (id, titlu_curs));
 CREATE TABLE titluri (id_student NUMBER(1,0) not null, titlu_curs VARCHAR2(50 BYTE) not null,
-                      constraint id_student_titlu_fk foreign key (id_student, titlu_curs) references lista_studenti (id, titlu_curs));
+                      constraint id_student_titlu_fk foreign key (id_student, titlu_curs) references lista_studenti (id, titlu_curs)
+                      on delete cascade);
 
 CREATE OR REPLACE PROCEDURE insert_student(p_numar_studenti integer) AS
   v_id integer := 0;

@@ -2,9 +2,6 @@
 3. O procedura care sa elimine un student din baza de date (se vor elimina si constrangerile).
 */
 
-alter table titluri disable constraint id_student_titlu_fk;
-alter table lista_studenti disable constraint id_titlu_pk;
-
 CREATE OR REPLACE PROCEDURE delete_student(p_id_student integer) AS
     cursor update_lista_studenti is select * from lista_studenti for update nowait;
     v_numar_studenti integer;
