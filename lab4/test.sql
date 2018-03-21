@@ -1,4 +1,4 @@
-/* Test exercitiul 1 lab 3 */
+/* Test exercitiul 1 lab 4
 
 set serveroutput on;
 DECLARE
@@ -19,3 +19,13 @@ BEGIN
     end loop;
     close varste_studenti; 
 END;
+*/
+
+
+/* Test exercitiul 2 lab 4 
+set serveroutput on;
+BEGIN
+    insert_student(4);
+END;
+
+*/
