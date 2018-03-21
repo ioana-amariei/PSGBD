@@ -23,9 +23,8 @@ END;
 
 
 /* Test exercitiul 2 lab 4 
-set serveroutput on;
 BEGIN
     insert_student(4);
 END;
-
 */
+

@@ -1,30 +1,8 @@
-/* The syntax for the Oracle INSERT statement when inserting multiple records using a SELECT statement is:
-          INSERT INTO table
-          (column1, column2, ... column_n )
-          SELECT expression1, expression2, ... expression_n
-          FROM source_table
-          [WHERE conditions];
-Parameters or Arguments
-
-table
-    The table to insert the records into.
-column1, column2, ... column_n
-    The columns in the table to insert values.
-expression1, expression2, ... expression_n
-    The values to assign to the columns in the table. So column1 would be assigned the value of expression1, column2 would be assigned the value of expression2, and so on.
-source_table
-    The source table when inserting data from another table.
-WHERE conditions
-    Optional. The conditions that must be met for the records to be inserted. 
-*/
-
 /*
   2. O procedura care sa adauge un student in baza de date 
   (cu generare de ID, matricol si simulare de note la materiile din anii precedenti 
   - de exemplu daca este in anul 3 va avea note la materiile din anii 1 si 2).
 */
-
-
 
 DROP TABLE lista_studenti;
 CREATE TABLE lista_studenti(id integer not null, nr_mat integer, nume VARCHAR2(5 BYTE), prenume VARCHAR2(10 BYTE), an integer, bursa NUMBER(6,2), data_nast DATE, nota integer, titlu_curs VARCHAR2(50 BYTE));
@@ -49,7 +27,7 @@ BEGIN
      for v_contor_nr_studenti in 1..p_numar_studenti loop
      /* genereaza valori random */
         v_id := v_id + 1;
-        v_nr_mat := DBMS_RANDOM.VALUE(100000, 300000);
+        v_nr_mat := DBMS_RANDOM.VALUE(1000, 3000);
         v_nume := DBMS_RANDOM.STRING('u', 5);
         v_prenume := DBMS_RANDOM.STRING('u',10);
         v_an := DBMS_RANDOM.VALUE(1,3);
@@ -57,7 +35,7 @@ BEGIN
         v_data_nast := TRUNC(SYSDATE + DBMS_RANDOM.value(0,366));
         
         for v_contor_an in 1..v_an loop
-            open titlu_cursuri(v_an);
+            open titlu_cursuri(v_contor_an);
                 loop
                     fetch titlu_cursuri INTO v_titlu_curs;
                     exit when titlu_cursuri%NOTFOUND;
