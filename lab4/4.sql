@@ -11,10 +11,14 @@ CREATE OR REPLACE PROCEDURE informatii_student(p_id_student IN integer) AS
                               and note.id_student = p_id_student;
                               
     cursor prieteni is select s2.nume, s2.prenume
-                        from prieteni, studenti s1, studenti s2
-                        where s1.id = p_id_student
-                        and s1.id = id_student1
-                        and s2.id = id_student2;
+                      from prieteni, studenti s1, studenti s2
+                      where s1.id = p_id_student
+                      and s1.id = id_student1
+                      and s2.id = id_student2
+                      and s2.id in (select s.id from studenti s, prieteni
+                                      where s.id = id_student1
+                                      and s1.id = id_student2
+                                      and s.id <> s1.id);
                         
     cursor clasament is select avg(n2.valoare) as "Medie"
                           from studenti s1, studenti s2, note n1, note n2
@@ -38,7 +42,8 @@ CREATE OR REPLACE PROCEDURE informatii_student(p_id_student IN integer) AS
     v_titlu_curs cursuri.titlu_curs%type;
     v_nume_prieten studenti.nume%type;
     v_prenume_prieten studenti.prenume%type;
-    v_clasament_grupa integer := 1;
+    v_clasament_grupa integer;
+    v_contor integer := 1;
     v_medie_coleg float;
 BEGIN
     select nr_matricol, nume, prenume into v_nr_matricol, v_nume, v_prenume 
@@ -89,12 +94,13 @@ BEGIN
             fetch clasament into v_medie_coleg;
             exit when clasament%NOTFOUND;
             if(v_medie_coleg = v_medie) then
-                DBMS_OUTPUT.PUT_LINE('Studentul se afla pe locul: ' || '  ' || v_clasament_grupa || ' in grupa.');
+                v_clasament_grupa := v_contor;
             else
-                v_clasament_grupa := v_clasament_grupa + 1;
+                v_contor := v_contor + 1;
             end if;
         end loop;
     close clasament;
+    DBMS_OUTPUT.PUT_LINE('Studentul se afla pe locul: ' || '  ' || v_clasament_grupa || ' in grupa.');
     DBMS_OUTPUT.PUT_LINE('--------------------------------------------------------');
     DBMS_OUTPUT.PUT_LINE(' ');
 END;
