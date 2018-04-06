@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="@localhost">
+  <database-model serializer="dbm" rdbms="ORACLE" format-version="4.7">
+    <root id="1"/>
+    <schema id="2" parent="1" name="STUDENT">
+      <ObjectId>48</ObjectId>
+      <IntrospectionTimestamp>2018-04-06.19:55:18</IntrospectionTimestamp>
+      <CreatedTimestamp>2017-12-20.14:27:59</CreatedTimestamp>
+      <ModifiedTimestamp>2018-03-31.14:41:56</ModifiedTimestamp>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="PUBLIC">
+      <ObjectId>1</ObjectId>
+    </schema>
+    <schema id="4" parent="1" name="SYS">
+      <ObjectId>0</ObjectId>
+    </schema>
+    <schema id="5" parent="1" name="SYSTEM">
+      <ObjectId>5</ObjectId>
+    </schema>
+    <schema id="6" parent="1" name="OUTLN">
+      <ObjectId>9</ObjectId>
+    </schema>
+    <schema id="7" parent="1" name="DIP">
+      <ObjectId>14</ObjectId>
+    </schema>
+    <schema id="8" parent="1" name="ORACLE_OCM">
+      <ObjectId>21</ObjectId>
+    </schema>
+    <schema id="9" parent="1" name="DBSNMP">
+      <ObjectId>29</ObjectId>
+    </schema>
+    <schema id="10" parent="1" name="APPQOSSYS">
+      <ObjectId>30</ObjectId>
+    </schema>
+    <schema id="11" parent="1" name="CTXSYS">
+      <ObjectId>32</ObjectId>
+    </schema>
+    <schema id="12" parent="1" name="XDB">
+      <ObjectId>34</ObjectId>
+    </schema>
+    <schema id="13" parent="1" name="ANONYMOUS">
+      <ObjectId>35</ObjectId>
+    </schema>
+    <schema id="14" parent="1" name="MDSYS">
+      <ObjectId>42</ObjectId>
+    </schema>
+    <schema id="15" parent="1" name="HR">
+      <ObjectId>43</ObjectId>
+    </schema>
+    <schema id="16" parent="1" name="FLOWS_FILES">
+      <ObjectId>44</ObjectId>
+    </schema>
+    <schema id="17" parent="1" name="APEX_PUBLIC_USER">
+      <ObjectId>45</ObjectId>
+    </schema>
+    <schema id="18" parent="1" name="APEX_040000">
+      <ObjectId>47</ObjectId>
+    </schema>
+    <schema id="19" parent="1" name="XS$NULL">
+      <ObjectId>2147483638</ObjectId>
+    </schema>
+    <sequence id="20" parent="2" name="S1">
+      <ObjectId>21438</ObjectId>
+      <CreatedTimestamp>2017-12-20.14:27:59</CreatedTimestamp>
+      <ModifiedTimestamp>2017-12-20.14:27:59</ModifiedTimestamp>
+      <SequenceIdentity>1+2..15</SequenceIdentity>
+    </sequence>
+    <table id="21" parent="2" name="CURSURI">
+      <ObjectId>25131</ObjectId>
+      <CreatedTimestamp>2018-03-31.14:41:56</CreatedTimestamp>
+      <ModifiedTimestamp>2018-03-31.14:41:56</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="22" parent="2" name="DIDACTIC">
+      <ObjectId>25137</ObjectId>
+      <CreatedTimestamp>2018-03-31.14:41:56</CreatedTimestamp>
+      <ModifiedTimestamp>2018-03-31.14:41:56</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="23" parent="2" name="NOTE">
+      <ObjectId>25133</ObjectId>
+      <CreatedTimestamp>2018-03-31.14:41:56</CreatedTimestamp>
+      <ModifiedTimestamp>2018-03-31.14:41:56</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="24" parent="2" name="PRIETENI">
+      <ObjectId>25139</ObjectId>
+      <CreatedTimestamp>2018-03-31.14:41:56</CreatedTimestamp>
+      <ModifiedTimestamp>2018-03-31.14:41:56</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="25" parent="2" name="PROFESORI">
+      <ObjectId>25135</ObjectId>
+      <CreatedTimestamp>2018-03-31.14:41:56</CreatedTimestamp>
+      <ModifiedTimestamp>2018-03-31.14:41:56</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="26" parent="2" name="STUDENTI">
+      <ObjectId>25129</ObjectId>
+      <CreatedTimestamp>2018-03-31.14:41:56</CreatedTimestamp>
+      <ModifiedTimestamp>2018-03-31.14:41:56</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <column id="27" parent="21" name="ID">
+      <Position>1</Position>
+      <DataType>NUMBER(*)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="28" parent="21" name="TITLU_CURS">
+      <Position>2</Position>
+      <DataType>VARCHAR2(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="29" parent="21" name="AN">
+      <Position>3</Position>
+      <DataType>NUMBER(1)|0</DataType>
+    </column>
+    <column id="30" parent="21" name="SEMESTRU">
+      <Position>4</Position>
+      <DataType>NUMBER(1)|0</DataType>
+    </column>
+    <column id="31" parent="21" name="CREDITE">
+      <Position>5</Position>
+      <DataType>NUMBER(2)|0</DataType>
+    </column>
+    <column id="32" parent="21" name="CREATED_AT">
+      <Position>6</Position>
+      <DataType>DATE|0</DataType>
+    </column>
+    <column id="33" parent="21" name="UPDATED_AT">
+      <Position>7</Position>
+      <DataType>DATE|0</DataType>
+    </column>
+    <index id="34" parent="21" name="SYS_C007891">
+      <ObjectId>25132</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2018-03-31.14:41:56</CreatedTimestamp>
+      <ModifiedTimestamp>2018-03-31.14:41:56</ModifiedTimestamp>
+      <TablespaceName>USERS</TablespaceName>
+      <ColNames>ID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="35" parent="21" name="SYS_C007891">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2018-03-31.14:41:56</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C007891</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="36" parent="22" name="ID">
+      <Position>1</Position>
+      <DataType>NUMBER(*)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="37" parent="22" name="ID_PROFESOR">
+      <Position>2</Position>
+      <DataType>NUMBER(*)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="38" parent="22" name="ID_CURS">
+      <Position>3</Position>
+      <DataType>NUMBER(*)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="39" parent="22" name="CREATED_AT">
+      <Position>4</Position>
+      <DataType>DATE|0</DataType>
+    </column>
+    <column id="40" parent="22" name="UPDATED_AT">
+      <Position>5</Position>
+      <DataType>DATE|0</DataType>
+    </column>
+    <index id="41" parent="22" name="SYS_C007905">
+      <ObjectId>25138</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2018-03-31.14:41:56</CreatedTimestamp>
+      <ModifiedTimestamp>2018-03-31.14:41:56</ModifiedTimestamp>
+      <TablespaceName>USERS</TablespaceName>
+      <ColNames>ID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="42" parent="22" name="SYS_C007905">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2018-03-31.14:41:56</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C007905</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="43" parent="22" name="FK_DIDACTIC_ID_PROFESOR">
+      <ModifiedTimestamp>2018-03-31.14:41:56</ModifiedTimestamp>
+      <ColNames>ID_PROFESOR</ColNames>
+      <RefSchemaName>STUDENT</RefSchemaName>
+      <RefTableName>PROFESORI</RefTableName>
+      <RefKeyName>SYS_C007901</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <foreign-key id="44" parent="22" name="FK_DIDACTIC_ID_CURS">
+      <ModifiedTimestamp>2018-03-31.14:41:56</ModifiedTimestamp>
+      <ColNames>ID_CURS</ColNames>
+      <RefSchemaName>STUDENT</RefSchemaName>
+      <RefTableName>CURSURI</RefTableName>
+      <RefKeyName>SYS_C007891</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <column id="45" parent="23" name="ID">
+      <Position>1</Position>
+      <DataType>NUMBER(*)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="46" parent="23" name="ID_STUDENT">
+      <Position>2</Position>
+      <DataType>NUMBER(*)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="47" parent="23" name="ID_CURS">
+      <Position>3</Position>
+      <DataType>NUMBER(*)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="48" parent="23" name="VALOARE">
+      <Position>4</Position>
+      <DataType>NUMBER(2)|0</DataType>
+    </column>
+    <column id="49" parent="23" name="DATA_NOTARE">
+      <Position>5</Position>
+      <DataType>DATE|0</DataType>
+    </column>
+    <column id="50" parent="23" name="CREATED_AT">
+      <Position>6</Position>
+      <DataType>DATE|0</DataType>
+    </column>
+    <column id="51" parent="23" name="UPDATED_AT">
+      <Position>7</Position>
+      <DataType>DATE|0</DataType>
+    </column>
+    <index id="52" parent="23" name="SYS_C007895">
+      <ObjectId>25134</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2018-03-31.14:41:56</CreatedTimestamp>
+      <ModifiedTimestamp>2018-03-31.14:41:56</ModifiedTimestamp>
+      <TablespaceName>USERS</TablespaceName>
+      <ColNames>ID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="53" parent="23" name="SYS_C007895">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2018-03-31.14:41:56</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C007895</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="54" parent="23" name="FK_NOTE_ID_STUDENT">
+      <ModifiedTimestamp>2018-03-31.14:41:56</ModifiedTimestamp>
+      <ColNames>ID_STUDENT</ColNames>
+      <RefSchemaName>STUDENT</RefSchemaName>
+      <RefTableName>STUDENTI</RefTableName>
+      <RefKeyName>SYS_C007888</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <foreign-key id="55" parent="23" name="FK_NOTE_ID_CURS">
+      <ModifiedTimestamp>2018-03-31.14:41:56</ModifiedTimestamp>
+      <ColNames>ID_CURS</ColNames>
+      <RefSchemaName>STUDENT</RefSchemaName>
+      <RefTableName>CURSURI</RefTableName>
+      <RefKeyName>SYS_C007891</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <column id="56" parent="24" name="ID">
+      <Position>1</Position>
+      <DataType>NUMBER(*)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="57" parent="24" name="ID_STUDENT1">
+      <Position>2</Position>
+      <DataType>NUMBER(*)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="58" parent="24" name="ID_STUDENT2">
+      <Position>3</Position>
+      <DataType>NUMBER(*)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="59" parent="24" name="CREATED_AT">
+      <Position>4</Position>
+      <DataType>DATE|0</DataType>
+    </column>
+    <column id="60" parent="24" name="UPDATED_AT">
+      <Position>5</Position>
+      <DataType>DATE|0</DataType>
+    </column>
+    <index id="61" parent="24" name="SYS_C007910">
+      <ObjectId>25140</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2018-03-31.14:41:56</CreatedTimestamp>
+      <ModifiedTimestamp>2018-03-31.14:41:56</ModifiedTimestamp>
+      <TablespaceName>USERS</TablespaceName>
+      <ColNames>ID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="62" parent="24" name="NO_DUPLICATES">
+      <ObjectId>25141</ObjectId>
+      <CreatedTimestamp>2018-03-31.14:41:56</CreatedTimestamp>
+      <ModifiedTimestamp>2018-03-31.14:41:56</ModifiedTimestamp>
+      <TablespaceName>USERS</TablespaceName>
+      <ColNames>ID_STUDENT1
+ID_STUDENT2</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="63" parent="24" name="SYS_C007910">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2018-03-31.14:41:56</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C007910</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <key id="64" parent="24" name="NO_DUPLICATES">
+      <ModifiedTimestamp>2018-03-31.14:41:56</ModifiedTimestamp>
+      <ColNames>ID_STUDENT1
+ID_STUDENT2</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>NO_DUPLICATES</UnderlyingIndexName>
+    </key>
+    <foreign-key id="65" parent="24" name="FK_PRIETENI_ID_STUDENT1">
+      <ModifiedTimestamp>2018-03-31.14:41:56</ModifiedTimestamp>
+      <ColNames>ID_STUDENT1</ColNames>
+      <RefSchemaName>STUDENT</RefSchemaName>
+      <RefTableName>STUDENTI</RefTableName>
+      <RefKeyName>SYS_C007888</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <foreign-key id="66" parent="24" name="FK_PRIETENI_ID_STUDENT2">
+      <ModifiedTimestamp>2018-03-31.14:41:56</ModifiedTimestamp>
+      <ColNames>ID_STUDENT2</ColNames>
+      <RefSchemaName>STUDENT</RefSchemaName>
+      <RefTableName>STUDENTI</RefTableName>
+      <RefKeyName>SYS_C007888</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <column id="67" parent="25" name="ID">
+      <Position>1</Position>
+      <DataType>NUMBER(*)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="68" parent="25" name="NUME">
+      <Position>2</Position>
+      <DataType>VARCHAR2(15)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="69" parent="25" name="PRENUME">
+      <Position>3</Position>
+      <DataType>VARCHAR2(30)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="70" parent="25" name="GRAD_DIDACTIC">
+      <Position>4</Position>
+      <DataType>VARCHAR2(20)|0</DataType>
+    </column>
+    <column id="71" parent="25" name="CREATED_AT">
+      <Position>5</Position>
+      <DataType>DATE|0</DataType>
+    </column>
+    <column id="72" parent="25" name="UPDATED_AT">
+      <Position>6</Position>
+      <DataType>DATE|0</DataType>
+    </column>
+    <index id="73" parent="25" name="SYS_C007901">
+      <ObjectId>25136</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2018-03-31.14:41:56</CreatedTimestamp>
+      <ModifiedTimestamp>2018-03-31.14:41:56</ModifiedTimestamp>
+      <TablespaceName>USERS</TablespaceName>
+      <ColNames>ID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="74" parent="25" name="SYS_C007901">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2018-03-31.14:41:56</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C007901</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="75" parent="26" name="ID">
+      <Position>1</Position>
+      <DataType>NUMBER(*)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="76" parent="26" name="NR_MATRICOL">
+      <Position>2</Position>
+      <DataType>VARCHAR2(6)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="77" parent="26" name="NUME">
+      <Position>3</Position>
+      <DataType>VARCHAR2(15)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="78" parent="26" name="PRENUME">
+      <Position>4</Position>
+      <DataType>VARCHAR2(30)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="79" parent="26" name="AN">
+      <Position>5</Position>
+      <DataType>NUMBER(1)|0</DataType>
+    </column>
+    <column id="80" parent="26" name="GRUPA">
+      <Position>6</Position>
+      <DataType>CHAR(2)|0</DataType>
+    </column>
+    <column id="81" parent="26" name="BURSA">
+      <Position>7</Position>
+      <DataType>NUMBER(6,2)|0</DataType>
+    </column>
+    <column id="82" parent="26" name="DATA_NASTERE">
+      <Position>8</Position>
+      <DataType>DATE|0</DataType>
+    </column>
+    <column id="83" parent="26" name="EMAIL">
+      <Position>9</Position>
+      <DataType>VARCHAR2(40)|0</DataType>
+    </column>
+    <column id="84" parent="26" name="CREATED_AT">
+      <Position>10</Position>
+      <DataType>DATE|0</DataType>
+    </column>
+    <column id="85" parent="26" name="UPDATED_AT">
+      <Position>11</Position>
+      <DataType>DATE|0</DataType>
+    </column>
+    <index id="86" parent="26" name="SYS_C007888">
+      <ObjectId>25130</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2018-03-31.14:41:56</CreatedTimestamp>
+      <ModifiedTimestamp>2018-03-31.14:41:56</ModifiedTimestamp>
+      <TablespaceName>USERS</TablespaceName>
+      <ColNames>ID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="87" parent="26" name="SYS_C007888">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2018-03-31.14:41:56</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C007888</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
