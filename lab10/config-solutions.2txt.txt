@@ -1,0 +1,21 @@
+BEGIN
+  DBMS_NETWORK_ACL_ADMIN.CREATE_ACL (
+    acl => 'UTL_SMTP.xml',
+    description => 'Granting privs to required users for UTL_SMTP.xml',
+    principal => 'STUDENT',
+    is_grant => TRUE,
+    privilege => 'connect');
+
+  DBMS_NETWORK_ACL_ADMIN.ADD_PRIVILEGE (
+    acl => 'UTL_SMTP.xml',
+    principal => 'STUDENT',
+    is_grant => TRUE,
+    privilege => 'resolve');
+
+  DBMS_NETWORK_ACL_ADMIN.ASSIGN_ACL (
+    acl => 'UTL_SMTP.xml',
+    host => 'fenrir.info.uaic.ro');
+END;
+/
+
+COMMIT;
